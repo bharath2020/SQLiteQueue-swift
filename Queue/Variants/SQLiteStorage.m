@@ -131,13 +131,15 @@
         }
     }];
     BOOL success = YES;
-    success = (sqlite3_bind_text(deleteStatement,1, [ids UTF8String], -1, SQLITE_TRANSIENT) == SQLITE_OK);
-    NSLog(@"bind: %s, %d", sqlite3_errmsg(db), sqlite3_errcode(db));
-
-    success = sqlite3_step(deleteStatement);
+    NSString *query = [NSString stringWithFormat:@"DELETE FROM events WHERE id IN ( %@ )", ids];
+    sqlite3_exec(db, [query UTF8String], nil, nil, nil);
+//    success = (sqlite3_bind_text(deleteStatement,1, [ids UTF8String], -1, SQLITE_TRANSIENT) == SQLITE_OK);
+//    NSLog(@"bind: %s, %d", sqlite3_errmsg(db), sqlite3_errcode(db));
+//
+//    success = sqlite3_step(deleteStatement);
     NSLog(@"%s, %d", sqlite3_errmsg(db), sqlite3_errcode(db));
 
-    NSLog(@"Count after delete: %d", [self count]);
+    NSLog(@"Count after delete: %ld", (long)[self count]);
 
     sqlite3_clear_bindings(deleteStatement);
     sqlite3_reset(deleteStatement);
@@ -146,7 +148,7 @@
     }
 }
 
-- (NSArray<EventRecord *> *)nextEvents:(NSInteger)limit {
+- (NSArray<EventRecord *> *)nextEvents:(int)limit {
     if( limit < 1) {
         return nil;
     }

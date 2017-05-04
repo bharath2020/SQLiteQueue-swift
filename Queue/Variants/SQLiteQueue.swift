@@ -38,11 +38,11 @@ public final class SQLiteQueue<T: StringConvertible> : Queue {
     }
     
     public func peek(count: Int, deleteAfterPeek: Bool = false) -> [T]? {
-        guard let records = db.nextEvents(limit: count) else {
+        guard let records = db.nextEvents(limit: Int32(count)) else {
             return nil
         }
 
-        var items = records.flatMap {
+        let items = records.flatMap {
             T($0.payload)
         }
 

@@ -20,6 +20,6 @@
 - (void)addEvent:(EventRecord *)record NS_SWIFT_NAME(add(event:));
 - (void)addEvents:(NSArray<EventRecord *> *)events NS_SWIFT_NAME(add(events:));
 - (void)removeEvents: (NSArray<NSString *> *)identifiers NS_SWIFT_NAME(remvove(events:));
-- (NSArray<EventRecord *> *)nextEvents:(NSInteger)limit NS_SWIFT_NAME(nextEvents(limit:));
+- (NSArray<EventRecord *> *)nextEvents:(int)limit NS_SWIFT_NAME(nextEvents(limit:));
 - (NSInteger)count NS_SWIFT_NAME(count());
 @end
