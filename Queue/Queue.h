@@ -18,4 +18,4 @@ FOUNDATION_EXPORT const unsigned char QueueVersionString[];
 
 @import Foundation;
 
-#import "sqlite3.h"
+#import <Queue/SQLiteStorage.h>

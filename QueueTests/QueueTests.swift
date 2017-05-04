@@ -41,9 +41,14 @@ class QueueTests: XCTestCase {
             sqlQueue?.enqueue("\(x)")
         }
         XCTAssertEqual(100, sqlQueue?.count)
-        XCTAssertEqual(sqlQueue?.dequeue(count: 200)?.count, 100)
-        XCTAssertEqual(sqlQueue?.count, 0)
-        XCTAssertNil(sqlQueue?.dequeue())
+        let elements = sqlQueue?.dequeue(count: 200)
+        XCTAssertEqual(elements?.count, 100)
+
+        sqlQueue?.enqueue("400")
+        sqlQueue?.enqueue("400")
+
+        XCTAssertEqual(sqlQueue?.count, 2)
+        //XCTAssertNil(sqlQueue?.dequeue())
 
     }
     

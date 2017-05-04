@@ -13,7 +13,7 @@
 		5930DF961DD6BC0F00F8A366 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930DF951DD6BC0F00F8A366 /* Queue.swift */; };
 		5930DF981DD6BC8100F8A366 /* AnyQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930DF971DD6BC8100F8A366 /* AnyQueue.swift */; };
 		5930DF9B1DD6C39000F8A366 /* SQLiteQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930DF9A1DD6C39000F8A366 /* SQLiteQueue.swift */; };
-		593A4C6A1EBAE3F2005C2541 /* SQLiteStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 593A4C681EBAE3F2005C2541 /* SQLiteStorage.h */; };
+		593A4C6A1EBAE3F2005C2541 /* SQLiteStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 593A4C681EBAE3F2005C2541 /* SQLiteStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		593A4C6B1EBAE3F2005C2541 /* SQLiteStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 593A4C691EBAE3F2005C2541 /* SQLiteStorage.m */; };
 		59480B411DD6CB11001393FA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59480B401DD6CB11001393FA /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
@@ -41,8 +41,6 @@
 		593A4C681EBAE3F2005C2541 /* SQLiteStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteStorage.h; sourceTree = "<group>"; };
 		593A4C691EBAE3F2005C2541 /* SQLiteStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteStorage.m; sourceTree = "<group>"; };
 		59480B401DD6CB11001393FA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		59480B431DD6CBCE001393FA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		59480B481DD8238E001393FA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 		5930DF711DD6BBE400F8A366 = {
 			isa = PBXGroup;
 			children = (
-				5930DF9F1DD6C83700F8A366 /* Module */,
 				5930DF7D1DD6BBE400F8A366 /* Queue */,
 				5930DF881DD6BBE400F8A366 /* QueueTests */,
 				5930DF7C1DD6BBE400F8A366 /* Products */,
@@ -88,8 +85,6 @@
 		5930DF7D1DD6BBE400F8A366 /* Queue */ = {
 			isa = PBXGroup;
 			children = (
-				59480B471DD8238E001393FA /* iphoneos */,
-				59480B421DD6CBCE001393FA /* iphonesimulator */,
 				5930DF991DD6C37500F8A366 /* Variants */,
 				5930DF7E1DD6BBE400F8A366 /* Queue.h */,
 				5930DF7F1DD6BBE400F8A366 /* Info.plist */,
@@ -124,29 +119,6 @@
 				59480B401DD6CB11001393FA /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5930DF9F1DD6C83700F8A366 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Module;
-			sourceTree = "<group>";
-		};
-		59480B421DD6CBCE001393FA /* iphonesimulator */ = {
-			isa = PBXGroup;
-			children = (
-				59480B431DD6CBCE001393FA /* module.modulemap */,
-			);
-			path = iphonesimulator;
-			sourceTree = "<group>";
-		};
-		59480B471DD8238E001393FA /* iphoneos */ = {
-			isa = PBXGroup;
-			children = (
-				59480B481DD8238E001393FA /* module.modulemap */,
-			);
-			path = iphoneos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
