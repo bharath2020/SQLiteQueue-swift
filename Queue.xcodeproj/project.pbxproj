@@ -13,6 +13,8 @@
 		5930DF961DD6BC0F00F8A366 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930DF951DD6BC0F00F8A366 /* Queue.swift */; };
 		5930DF981DD6BC8100F8A366 /* AnyQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930DF971DD6BC8100F8A366 /* AnyQueue.swift */; };
 		5930DF9B1DD6C39000F8A366 /* SQLiteQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5930DF9A1DD6C39000F8A366 /* SQLiteQueue.swift */; };
+		593A4C6A1EBAE3F2005C2541 /* SQLiteStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 593A4C681EBAE3F2005C2541 /* SQLiteStorage.h */; };
+		593A4C6B1EBAE3F2005C2541 /* SQLiteStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 593A4C691EBAE3F2005C2541 /* SQLiteStorage.m */; };
 		59480B411DD6CB11001393FA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59480B401DD6CB11001393FA /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		5930DF951DD6BC0F00F8A366 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		5930DF971DD6BC8100F8A366 /* AnyQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyQueue.swift; sourceTree = "<group>"; };
 		5930DF9A1DD6C39000F8A366 /* SQLiteQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteQueue.swift; sourceTree = "<group>"; };
+		593A4C681EBAE3F2005C2541 /* SQLiteStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteStorage.h; sourceTree = "<group>"; };
+		593A4C691EBAE3F2005C2541 /* SQLiteStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteStorage.m; sourceTree = "<group>"; };
 		59480B401DD6CB11001393FA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		59480B431DD6CBCE001393FA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		59480B481DD8238E001393FA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				5930DF9A1DD6C39000F8A366 /* SQLiteQueue.swift */,
+				593A4C681EBAE3F2005C2541 /* SQLiteStorage.h */,
+				593A4C691EBAE3F2005C2541 /* SQLiteStorage.m */,
 			);
 			path = Variants;
 			sourceTree = "<group>";
@@ -150,6 +156,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593A4C6A1EBAE3F2005C2541 /* SQLiteStorage.h in Headers */,
 				5930DF8C1DD6BBE400F8A366 /* Queue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +213,7 @@
 					5930DF7A1DD6BBE400F8A366 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = BQNXB4G3KQ;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					5930DF831DD6BBE400F8A366 = {
@@ -257,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5930DF981DD6BC8100F8A366 /* AnyQueue.swift in Sources */,
+				593A4C6B1EBAE3F2005C2541 /* SQLiteStorage.m in Sources */,
 				5930DF9B1DD6C39000F8A366 /* SQLiteQueue.swift in Sources */,
 				5930DF961DD6BC0F00F8A366 /* Queue.swift in Sources */,
 			);
