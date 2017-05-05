@@ -38,7 +38,17 @@ public final class SQLiteQueue<T: StringConvertible> : Queue {
     }
     
     public func peek(count: Int, deleteAfterPeek: Bool = false) -> [T]? {
-        guard let records = db.nextEvents(limit: Int32(count)) else {
+        let nextRecords: [Record]? = DispatchQueue.global().sync {
+            let semaphore = DispatchSemaphore(value: 0)
+            var nextRecords: [Record]?
+            db.nextEvents(limit: Int32(count)) { records in
+                nextRecords = records
+                semaphore.signal()
+            }
+            semaphore.wait()
+            return nextRecords
+        }
+        guard let records = nextRecords else {
             return nil
         }
 
@@ -50,13 +60,23 @@ public final class SQLiteQueue<T: StringConvertible> : Queue {
             let ids = records.flatMap {
                 $0.identifier
             }
-            db.remvove(events: ids)
+            db.remove(events: ids)
         }
         return items
     }
     
     public var count: Int {
-        return db.count()
+       return DispatchQueue.global().sync {
+            let semaphore = DispatchSemaphore(value: 0)
+            var totalRecords: Int = 0
+            db.count { total in
+                totalRecords  = total
+                semaphore.signal()
+            }
+
+            semaphore.wait()
+            return totalRecords
+        }
     }
     
 

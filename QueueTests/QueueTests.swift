@@ -64,12 +64,15 @@ class QueueTests: XCTestCase {
     
     func testPreserveContentOnMultipleOpenAndClose() {
         let dbPath = self.randomDBPath
-        var queue = try? SQLiteQueue<String>(dbPath)
+        let queue = try? SQLiteQueue<String>(dbPath)
         for x in 1...100 {
             queue?.enqueue("\(x)")
         }
-        
-        queue = try? SQLiteQueue<String>(dbPath)
+
+        XCTAssertNotNil(queue)
+        let queue2 = try? SQLiteQueue<String>(dbPath)
+
+        XCTAssertNotNil(queue2)
         XCTAssertEqual(100, queue?.count)
     }
 
