@@ -75,12 +75,9 @@ class QueueTests: XCTestCase {
 
     func testMeasureDeletePerformance() {
 
-        self.measure {
-            for x in 1...100 {
-                self.sqlQueue?.enqueue("\(x)")
-            }
-            self.sqlQueue?.dequeue()
-        }
+    }
+
+    func testSQLInjection() {
     }
     
 }

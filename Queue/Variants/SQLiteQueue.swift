@@ -31,7 +31,7 @@ public final class SQLiteQueue<T: StringConvertible> : Queue {
     
 
     public func enqueue(_ item: T) {
-        guard let record = EventRecord(identifier: UUID().uuidString, payload: item.toString()) else {
+        guard let record = Record(identifier: UUID().uuidString, payload: item.toString()) else {
             return
         }
         db.add(event: record)

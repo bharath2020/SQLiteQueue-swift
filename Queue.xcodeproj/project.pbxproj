@@ -16,6 +16,7 @@
 		593A4C6A1EBAE3F2005C2541 /* SQLiteStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 593A4C681EBAE3F2005C2541 /* SQLiteStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		593A4C6B1EBAE3F2005C2541 /* SQLiteStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 593A4C691EBAE3F2005C2541 /* SQLiteStorage.m */; };
 		59480B411DD6CB11001393FA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 59480B401DD6CB11001393FA /* libsqlite3.tbd */; };
+		59A197EE1EBC36A40035DBAE /* SQLiteStorageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A197ED1EBC36A40035DBAE /* SQLiteStorageTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		593A4C681EBAE3F2005C2541 /* SQLiteStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteStorage.h; sourceTree = "<group>"; };
 		593A4C691EBAE3F2005C2541 /* SQLiteStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteStorage.m; sourceTree = "<group>"; };
 		59480B401DD6CB11001393FA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		59A197EC1EBC36A40035DBAE /* QueueTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueueTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		59A197ED1EBC36A40035DBAE /* SQLiteStorageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteStorageTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 			children = (
 				5930DF891DD6BBE400F8A366 /* QueueTests.swift */,
 				5930DF8B1DD6BBE400F8A366 /* Info.plist */,
+				59A197ED1EBC36A40035DBAE /* SQLiteStorageTests.m */,
+				59A197EC1EBC36A40035DBAE /* QueueTests-Bridging-Header.h */,
 			);
 			path = QueueTests;
 			sourceTree = "<group>";
@@ -184,13 +189,14 @@
 				TargetAttributes = {
 					5930DF7A1DD6BBE400F8A366 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = BQNXB4G3KQ;
+						DevelopmentTeam = UPXU4CQZ5P;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					5930DF831DD6BBE400F8A366 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = BQNXB4G3KQ;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -247,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5930DF8A1DD6BBE400F8A366 /* QueueTests.swift in Sources */,
+				59A197EE1EBC36A40035DBAE /* SQLiteStorageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +374,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BQNXB4G3KQ;
+				DEVELOPMENT_TEAM = UPXU4CQZ5P;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -392,7 +399,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = BQNXB4G3KQ;
+				DEVELOPMENT_TEAM = UPXU4CQZ5P;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -413,11 +420,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = BQNXB4G3KQ;
 				INFOPLIST_FILE = QueueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.QueueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QueueTests/QueueTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,11 +436,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = BQNXB4G3KQ;
 				INFOPLIST_FILE = QueueTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atlassian.QueueTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QueueTests/QueueTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
